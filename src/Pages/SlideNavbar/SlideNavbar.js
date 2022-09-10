@@ -15,11 +15,11 @@ const SlideNavbar = () => {
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                     <ul className="menu p-4 overflow-y-auto w-32 bg-base-100 text-base-content">
                         
-                        <li><a><HiOutlineHome></HiOutlineHome></a></li>
-                        <li><a><IoIosNotificationsOutline></IoIosNotificationsOutline></a></li>
-                        <li><a><BsBookmarks></BsBookmarks></a></li>
-                        <li><a><HiOutlinePencilAlt></HiOutlinePencilAlt></a></li>
-                        <li><a>profile</a></li>
+                        <li className='mb-8 text-xl'><a><HiOutlineHome></HiOutlineHome></a></li>
+                        <li className='mb-8 text-2xl'><a><IoIosNotificationsOutline></IoIosNotificationsOutline></a></li>
+                        <li className='mb-8 text-xl'><a><BsBookmarks></BsBookmarks></a></li>
+                        <li className='mb-8 text-xl'><a><HiOutlinePencilAlt></HiOutlinePencilAlt></a></li>
+                        <li className='mb-8 text-xl'><a>pro</a></li>
                     </ul>
 
                 </div>
