@@ -1,0 +1,8 @@
+@media only screen and (max-width:576px){
+    .non{
+        display: none;
+    }
+    .pic{
+        display: none;
+    }
+}
