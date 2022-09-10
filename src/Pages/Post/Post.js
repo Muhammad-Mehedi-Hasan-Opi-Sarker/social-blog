@@ -1,9 +1,14 @@
 import React from 'react';
+import './Post.css';
 
 const Post = () => {
     return (
-        <div className='ml-32 mt-0'>
-            <h1 className='text-3xl'>post for this</h1>
+        <div className='mt-16'>
+            <div className='titlle'>
+                <input name='title' contentEditable
+                className='h-16 placeholder:text-3xl demo' 
+                type="text" placeholder='Write Title'/>
+            </div>
         </div>
     );
 };
