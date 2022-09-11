@@ -5,6 +5,7 @@ import Post from './Pages/Post/Post';
 import Home from './Pages/Home/Home';
 import Navbar from './Pages/SlideNavbar/Navbar/Navbar';
 import SignIn from './Pages/SignInOut/SignIn';
+import SignUp from './Pages/SignInOut/SignUp';
 
 
 function App() {
