@@ -3,6 +3,8 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useParams } from 'react-router-dom';
 import auth from '../../firebase.init';
 import './Post.css';
+import { toast } from 'react-toastify';
+
 
 const Post = () => {
     const {id} = useParams();
@@ -12,11 +14,16 @@ const Post = () => {
         e.preventDefault();
         const title = e.target.title.value;
         const post = e.target.post.value;
+        let today = new Date();
+        let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+
         const data = {
             title: title,
             post: post,
             user: user.displayName,
-            photo: user.photoURL
+            photo: user.photoURL,
+            email:user.email,
+            date:date
         }
         fetch(`http://localhost:5000/post`, {
             method: 'POST', // or 'PUT'
@@ -27,11 +34,14 @@ const Post = () => {
         })
             .then((response) => response.json())
             .then((data) => {
-                console.log('Success:', data);
+                if(data){
+                    
+                    toast('Publish Your Post')
+                }
             })
     }
     return (
-        <div className='mt-16 lg:px-24 px-4'>
+        <div className='mt-16 lg:px-24 px-4 mr-4'>
 
             <form onSubmit={handlePost}>
                 {/* for title  */}
