@@ -9,11 +9,12 @@ import SignUp from './Pages/SignInOut/SignUp';
 import { ToastContainer } from 'react-toastify';
 import SeeMore from './Pages/Home/SeeMore';
 import Profile from './Pages/Profile/Profile';
+import EditProfile from './Pages/Profile/EditProfile';
 
 
 function App() {
   return (
-    <div className="App">
+    <div className="App dark">
       <Navbar></Navbar>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
@@ -21,6 +22,7 @@ function App() {
         <Route path='/post' element={<Post></Post>}></Route>
         <Route path='/profile' element={<Profile></Profile>}></Route>
         <Route path='/seeMore/:id' element={<SeeMore></SeeMore>}></Route>
+        <Route path='/edit' element={<EditProfile></EditProfile>}></Route>
         <Route path='/signin' element={<SignIn></SignIn>}></Route>
       </Routes>
       <ToastContainer></ToastContainer>

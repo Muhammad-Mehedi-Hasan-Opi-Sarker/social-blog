@@ -1,11 +1,18 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Recently = () => {
     const [recent,setRecent] = useState([]);
+    const navigate = useNavigate();
     useEffect(()=>{
         fetch('http://localhost:5000/post')
         .then(res=>res.json()).then(data=>setRecent(data))
     },[])
+
+    const seeMore = id => {
+        navigate(`/seeMore/${id}`)
+    }
+
     return (
         <div>
             {
@@ -21,7 +28,7 @@ const Recently = () => {
                     </div>
     
                     <div className="">
-                        <h2 className="font-bold mr-8">{r.title}</h2>
+                        <h2 onClick={() => seeMore(r._id)} className="font-bold mr-8">{r.title}</h2>
                     </div>
                 </div>
             </div>)
