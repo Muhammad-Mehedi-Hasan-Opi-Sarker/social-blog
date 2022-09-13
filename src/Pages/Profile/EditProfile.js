@@ -5,6 +5,38 @@ import auth from '../../firebase.init';
 const EditProfile = () => {
     const [user] = useAuthState(auth);
 
+    const handleProfile = e => {
+        e.preventDefault();
+        const name = e.target.name.value;
+        const email = user?.email;
+        console.log(email)
+        const bio = e.target.bio.value;
+        const age = e.target.age.value;
+        const education = e.target.education.value;
+        const school = e.target.school.value;
+
+        const update = {
+            name: name,
+            bio: bio,
+            age: age,
+            education: education,
+            school: school
+        }
+
+        const url = `http://localhost:5000/profile/${email}`;
+        console.log(url)
+        fetch(url, {
+            method: 'PUT', // or 'PUT'
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(update),
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log('Success:', data);
+            })
+    };
 
     return (
         <div className='lg:px-20'>
@@ -39,13 +71,13 @@ const EditProfile = () => {
                 </div>
                 {/* form  */}
                 <div>
-                    <form>
-                        <input type="text" placeholder="Name" name='name' value={user.displayName} disabled className="input input-bordered input-primary w-full max-w-xs mb-5" /> <br />
-                        <input type="email" placeholder="email" name='email' value={user.email} disabled className="input input-bordered input-primary w-full max-w-xs mb-5" /> <br />
-                        <textarea className="textarea textarea-primary lg:w-80 mb-5" name='about' placeholder="About your"></textarea> <br />
-                        <input type="number" placeholder="age" name='age' className="input input-bordered input-primary w-full max-w-xs mb-5" /> <br />
-                        <input type="text" placeholder="Education" name='education' className="input input-bordered input-primary w-full max-w-xs mb-5" /> <br />
-                        <input type="text" placeholder="School" name='school' className="input input-bordered input-primary w-full max-w-xs mb-5" /> <br />
+                    <form onSubmit={handleProfile}>
+                        <input required type="text" placeholder="Name" name='name' value={user?.displayName} disabled className="input input-bordered input-primary w-full max-w-xs mb-5" /> <br />
+                        <input required type="email" placeholder="email" name='email' value={user?.email} disabled className="input input-bordered input-primary w-full max-w-xs mb-5" /> <br />
+                        <textarea className="textarea textarea-primary lg:w-80 mb-5" name='bio' placeholder="About your"></textarea> <br />
+                        <input required type="number" placeholder="age" name='age' className="input input-bordered input-primary w-full max-w-xs mb-5" /> <br />
+                        <input required type="text" placeholder="Education" name='education' className="input input-bordered input-primary w-full max-w-xs mb-5" /> <br />
+                        <input required type="text" placeholder="School" name='school' className="input input-bordered input-primary w-full max-w-xs mb-5" /> <br />
                         <input className='btn' type="submit" value="Submit" />
                     </form>
                 </div>

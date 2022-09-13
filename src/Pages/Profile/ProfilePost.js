@@ -9,8 +9,8 @@ const ProfilePost = () => {
     // personal post data 
     const [posts,setPosts] = useState([]);
     useEffect(()=>{
-        fetch(`http://localhost:5000/post/${user.email}`)
-        .then(res=>res.json()).then(data=>setPosts(data))
+        fetch(`http://localhost:5000/data?email=${user.email}`)
+        .then(res=>res.json()).then(data=>console.log(data))
     },[])
 
     const navigate = useNavigate();

@@ -8,6 +8,7 @@ import auth from '../../../firebase.init';
 import { useAuthState, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import Loading from '../../Sheared/Loading';
 import { signOut } from 'firebase/auth';
+import useToken from '../../../hooks/useToken';
 
 const Navbar = () => {
     const [user, loading, error] = useAuthState(auth);
@@ -32,6 +33,8 @@ const Navbar = () => {
     // social log 
     const [signInWithGoogle, guser, gloading, gerror] = useSignInWithGoogle(auth);
 
+    const [token] = useToken(user||guser)
+
     let errorElement;
     if(gerror || loading){
       return <p>{errorElement = <p className='text-red-500'>{gerror?.message}   </p>}</p>
@@ -40,8 +43,8 @@ const Navbar = () => {
     if (gloading) {
       return <Loading></Loading>;
     }
-    if (guser || loading) {
-      console.log(guser)
+    if (token) {
+    //   console.log(guser)
     }
 
     return (

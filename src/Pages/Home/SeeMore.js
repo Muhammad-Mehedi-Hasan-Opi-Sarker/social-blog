@@ -3,6 +3,7 @@ import { Routes, Route, useParams } from 'react-router-dom';
 import Recently from './Recently';
 import See from './See';
 
+
 const SeeMore = () => {
     const { id } = useParams();
     const [data, setData] = useState([]);
@@ -17,7 +18,7 @@ const SeeMore = () => {
                 <div className='lg:w-3/5 w-96'>
                     <See key={data._id} data={data}></See>
                 </div>
-                {/* recentry for        */}
+                {/* recentry for    */}
                 <div className='border-l-2'>
                     <Recently></Recently>
                 </div>

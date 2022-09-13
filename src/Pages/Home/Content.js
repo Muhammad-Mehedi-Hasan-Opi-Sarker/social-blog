@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import './Content.css';
-import { BsThreeDots } from 'react-icons/bs';
 import { useNavigate } from "react-router-dom";
 
 

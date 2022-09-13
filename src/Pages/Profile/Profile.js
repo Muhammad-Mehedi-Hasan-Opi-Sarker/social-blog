@@ -11,7 +11,7 @@ const Profile = () => {
             <div className='grid justify-items-center lg:grid-cols-2'> 
                 {/* profile for post */}
                 <div className='mb-5'>
-                    {/* <ProfilePost></ProfilePost> */}
+                    <ProfilePost></ProfilePost>
                 </div>
 
                 {/* profile for details  */}
