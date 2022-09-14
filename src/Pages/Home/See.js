@@ -80,8 +80,8 @@ const See = ({ data }) => {
             </div>
 
             <div className='mb-5'>
-                <h1 className='font-bold text-2xl'>{data.title}</h1>
-                <p>{data.post}</p>
+                <h1 className='font-bold text-2xl tracking-tight mb-5'>{data.title}</h1>
+                <p className='leading-6 tracking-tight'>{data?.post}</p>
             </div>
             {/* form for comment  */}
             <form onSubmit={handleLike}>

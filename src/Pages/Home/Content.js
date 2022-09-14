@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import './Content.css';
 import { useNavigate } from "react-router-dom";
-
+import './Content.css';
 
 const Content = () => {
     const navigate = useNavigate();
@@ -30,7 +29,7 @@ const Content = () => {
 
                     <div className=''>
                         <h1 className='font-bold text-2xl'>{p.title}</h1>
-                        <p className='mt-5'>{p.post.slice(0, 199)}
+                        <p className='mt-5 tracking-tight leading-6'>{p.post.slice(0, 199)}
                             <span onClick={() => seeMore(p._id)} className='bg-primary'>see more</span></p>
                     </div>
                 </div>).reverse()
