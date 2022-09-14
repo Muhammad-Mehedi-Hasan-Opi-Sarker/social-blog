@@ -69,9 +69,9 @@ const Navbar = () => {
 
                 {/* profile pic and search  */}
                
-                    <div className="form-control">
+                    {/* <div className="form-control">
                         <input type="text"  placeholder="Search" className="input input-bordered w-40" />
-                    </div>
+                    </div> */}
                     <div className="dropdown dropdown-end">
                         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">

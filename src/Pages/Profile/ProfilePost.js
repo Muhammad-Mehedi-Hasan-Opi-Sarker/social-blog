@@ -47,7 +47,7 @@ const ProfilePost = () => {
             {/* posts data  */}
             <div>
                 {
-                    posts.slice(0, 199).map(p => <div key={p._id} className="bg-primary mt-5 card grid justify-items-start bg-base-100 border-b-2 rounded-none mb-5 p-2  w-full">
+                    posts.slice(0, 199).map(p => <div key={p._id} className="bg-primary mt-5 card grid justify-items-start border-b-2 rounded-none mb-5 p-2  w-full">
                         <span>{p.date}</span>
 
                         <div className='grid justify-items-start'>
