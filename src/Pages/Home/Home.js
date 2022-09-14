@@ -8,7 +8,7 @@ const Home = () => {
         <div className='lg:px-24 px:4 grid justify-items-center'>
             <div className='lg:flex '>
                 {/* content for  */}
-                <div>
+                <div className='lg:ml-32'>
                     <Content></Content>
                 </div>
                 {/* recentry for        */}

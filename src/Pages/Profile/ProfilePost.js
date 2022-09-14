@@ -55,10 +55,10 @@ const ProfilePost = () => {
                             <p className='mt-5 tracking-tight' >{p.post.slice(0, 199)} see more </p>
                             <div className='flex'>
                                 <span onClick={() => handleDelete(p._id)} className='mr-8 font-bold text-xl'><MdDeleteForever></MdDeleteForever></span>
-                                <span className=' font-bold text-xl'><Link to={`/update/|${p._id}`}><AiOutlineEdit></AiOutlineEdit></Link></span>
+                                <span className=' font-bold text-xl'><Link to={`/update/${p._id}`}><AiOutlineEdit></AiOutlineEdit></Link></span>
                             </div>
                         </div>
-                    </div>)
+                    </div>).reverse()
                 }
             </div>
 
