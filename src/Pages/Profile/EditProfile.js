@@ -1,15 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
+import Loading from '../Sheared/Loading';
 
 const EditProfile = () => {
-    const [user] = useAuthState(auth);
+    const [user, loading] = useAuthState(auth);
+
+    // get for personal data 
+    const [profiles, setProfiles] = useState([]);
+    const [reload, setReload] = useState(false);
+    useState(()=>{
+        fetch(`http://localhost:5000/profile?email=${user?.email}`)
+        .then(res=>res.json())
+        .then(data=>setProfiles(data))
+    },[reload])
+
+
+    if (loading) {
+        return <Loading></Loading>
+    }
 
     const handleProfile = e => {
         e.preventDefault();
         const name = e.target.name.value;
         const email = user?.email;
-        console.log(email)
         const bio = e.target.bio.value;
         const age = e.target.age.value;
         const education = e.target.education.value;
@@ -24,7 +39,6 @@ const EditProfile = () => {
         }
 
         const url = `http://localhost:5000/profile/${email}`;
-        console.log(url)
         fetch(url, {
             method: 'PUT', // or 'PUT'
             headers: {
@@ -34,7 +48,10 @@ const EditProfile = () => {
         })
             .then((response) => response.json())
             .then((data) => {
-                console.log('Success:', data);
+                if (data) {
+                    toast('update success')
+                }
+                setReload(!reload)
             })
     };
 
@@ -43,32 +60,34 @@ const EditProfile = () => {
             <h1 className='font-bold text-2xl'>About you</h1>
             <div className='grid lg:grid-cols-2'>
                 {/* data show  */}
-                <div>
-                    <div className='border-b-2 grid justify-items-start mb-8'>
-                        <h1 className='font-bold text-xl'>Name</h1>
-                        <p>{user?.displayName}</p>
-                    </div>
-                    <div className='border-b-2 grid justify-items-start mb-8'>
-                        <h1 className='font-bold text-xl'>Email</h1>
-                        <p>{user?.email}</p>
-                    </div>
-                    <div className='border-b-2 grid justify-items-start mb-8'>
-                        <h1 className='font-bold text-xl'>Short bio</h1>
-                        <p></p>
-                    </div>
-                    <div className='border-b-2 grid justify-items-start mb-8'>
-                        <h1 className='font-bold text-xl'>Age</h1>
-                        <p></p>
-                    </div>
-                    <div className='border-b-2 grid justify-items-start mb-8'>
-                        <h1 className='font-bold text-xl'>Education</h1>
-                        <p></p>
-                    </div>
-                    <div className='border-b-2 grid justify-items-start mb-8'>
-                        <h1 className='font-bold text-xl'>School</h1>
-                        <p></p>
-                    </div>
-                </div>
+                {
+                    profiles.map(profile => <div key={profile._id}>
+                        <div className='border-b-2 grid justify-items-start mb-8'>
+                            <h1 className='font-bold text-xl'>Name</h1>
+                            <p>{user?.displayName}</p>
+                        </div>
+                        <div className='border-b-2 grid justify-items-start mb-8'>
+                            <h1 className='font-bold text-xl'>Email</h1>
+                            <p>{user?.email}</p>
+                        </div>
+                        <div className='border-b-2 grid justify-items-start mb-8'>
+                            <h1 className='font-bold text-xl'>Short bio</h1>
+                            <p>{profile.bio}</p>
+                        </div>
+                        <div className='border-b-2 grid justify-items-start mb-8'>
+                            <h1 className='font-bold text-xl'>Age</h1>
+                            <p>{profile.age}</p>
+                        </div>
+                        <div className='border-b-2 grid justify-items-start mb-8'>
+                            <h1 className='font-bold text-xl'>Education</h1>
+                            <p>{profile.education}</p>
+                        </div>
+                        <div className='border-b-2 grid justify-items-start mb-8'>
+                            <h1 className='font-bold text-xl'>School</h1>
+                            <p>{profile.school}</p>
+                        </div>
+                    </div>)
+                }
                 {/* form  */}
                 <div>
                     <form onSubmit={handleProfile}>
