@@ -5,7 +5,7 @@ const Recently = () => {
     const [recent,setRecent] = useState([]);
     const navigate = useNavigate();
     useEffect(()=>{
-        fetch('http://localhost:5000/post')
+        fetch('https://sheltered-brushlands-10944.herokuapp.com/post')
         .then(res=>res.json()).then(data=>setRecent(data))
     },[])
 
@@ -23,12 +23,12 @@ const Recently = () => {
                         <div className="w-8 rounded-full mr-3">
                             <img src={r.photo} />
                         </div>
-                        <p>{r.user}</p>
+                        <p className='font-serif'>{r.user}</p>
                         
                     </div>
     
                     <div className="">
-                        <h2 onClick={() => seeMore(r._id)} className="font-bold mr-8">{r.title.slice(0,34)}</h2>
+                        <h2 onClick={() => seeMore(r._id)} className="font-bold mr-8 font-serif">{r.title.slice(0,34)}</h2>
                     </div>
                 </div>
             </div>)

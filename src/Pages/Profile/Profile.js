@@ -7,7 +7,7 @@ import ProfilePost from './ProfilePost';
 const Profile = () => {
     
     return (
-        <div className='lg:px-28 px-4'>
+        <div className='lg:px-28 px-4 mt-8'>
             <div className='grid justify-items-center lg:grid-cols-2'> 
                 {/* profile for post */}
                 <div className='mb-5'>

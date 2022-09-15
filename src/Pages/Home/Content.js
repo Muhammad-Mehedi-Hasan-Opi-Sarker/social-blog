@@ -48,8 +48,8 @@ const Content = ({ searchTerm }) => {
                     </div>
 
                     <div className=''>
-                        <h1 className='font-bold text-2xl'>{p.title}</h1>
-                        <p className='mt-5 tracking-tight leading-6'>{p.post.slice(0, 300)}
+                        <h1 className='font-bold text-2xl font-serif'>{p.title}</h1>
+                        <p className='mt-5 tracking-tight leading-6 font-serif'>{p.post.slice(0, 300)}
                             <span onClick={() => seeMore(p._id)} className='text-2xl font-bold'>.....</span></p>
                     </div>
                 </div>).reverse()

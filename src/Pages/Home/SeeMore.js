@@ -12,16 +12,16 @@ const SeeMore = () => {
             .then(res => res.json()).then(data => setData(data))
     }, [])
     return (
-        <div className='lg:px-16 px:4 grid justify-items-center'>
-            <div className='lg:flex lg:gap-60'>
+        <div className='lg:px-32 px:4 grid justify-items-center'>
+            <div className='lg:flex lg:gap-60 grid justify-center'>
                 {/* content for  */}
-                <div className='lg:w-3/5 w-96'>
+                <div className='w-full'>
                     <See key={data._id} data={data}></See>
                 </div>
                 {/* recentry for    */}
-                <div className='border-l-2'>
+                {/* <div className='border-l-2'>
                     <Recently></Recently>
-                </div>
+                </div> */}
             </div>
         </div>
 

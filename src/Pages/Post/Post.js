@@ -59,7 +59,7 @@ const Post = () => {
                     placeholder='Tell Your Story.....'
                     type="text" name='post'
                 ></textarea> <br />
-                <input className='btn rounded-full border-none' style={{ backgroundColor: '#1a8917' }} type="submit" value="Publish" />
+                <input className='btn rounded-full border-none mb-32' style={{ backgroundColor: '#1a8917' }} type="submit" value="Publish" />
             </form>
         </div>
     );

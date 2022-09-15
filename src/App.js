@@ -17,7 +17,7 @@ import RequiredAuth from './Pages/RequiredAuth';
 
 function App() {
   return (
-    <div className="App dark">
+    <div className="App bg-primary">
       <Navbar></Navbar>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>

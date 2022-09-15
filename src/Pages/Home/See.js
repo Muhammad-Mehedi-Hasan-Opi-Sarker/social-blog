@@ -72,19 +72,19 @@ const See = ({ data }) => {
     return (
 
         <div>
-            <div className="card bg-base-100 border-b-2 rounded-none mb-5 p-2">
+            <div className="card bg-base-100 border-b-2 rounded-none mb-5 p-2 mt-8">
                 <div className="avatar">
                     <div className="w-8 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                         <img src={data.photo} />
 
                     </div>
-                    <p className='ml-3'>{data.user} . <span>{data.date}</span></p>
+                    <p className='ml-3 font-serif'>{data.user} . <span>{data.date}</span></p>
 
                 </div>
 
                 <div className='mb-5'>
-                    <h1 className='font-bold text-2xl tracking-tight mb-5'>{data.title}</h1>
-                    <p className='leading-6 tracking-tight'>{data?.post}</p>
+                    <h1 className='font-bold text-2xl tracking-tight mb-5 font-serif'>{data.title}</h1>
+                    <p className='  text-lg font-serif'>{data?.post}</p>
                 </div>
                 {/* form for comment  */}
                 <form onSubmit={handleLike}>
@@ -101,7 +101,7 @@ const See = ({ data }) => {
                                     <span className="label-text">Comment</span>
                                 </label>
 
-                                <textarea name='comment' required className="textarea textarea-bordered h-24 mb-5" placeholder="Write comment"></textarea>
+                                <textarea name='comment' required className="w-96 textarea textarea-bordered h-24 mb-5" placeholder="Write comment"></textarea>
                                 <input className='btn w-32' type="submit" value="Submit" />
                             </div>
 

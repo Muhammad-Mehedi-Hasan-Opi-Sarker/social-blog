@@ -22,9 +22,9 @@ const Navbar = () => {
         {/* home  */}
         <li className='text-4xl lg:ml-3'><Link to='/home'><HiOutlineHome></HiOutlineHome></Link></li>
         {/* notification  */}
-        <li className='text-5xl lg:ml-3'><a><IoIosNotificationsOutline></IoIosNotificationsOutline></a></li>
+        {/* <li className='text-5xl lg:ml-3'><a><IoIosNotificationsOutline></IoIosNotificationsOutline></a></li> */}
         {/* bookmarks  */}
-        <li className='text-4xl lg:ml-3'><a><BsBookmarks></BsBookmarks></a></li>
+        {/* <li className='text-4xl lg:ml-3'><a><BsBookmarks></BsBookmarks></a></li> */}
         {/* write post */}
         <li className='text-4xl lg:ml-3'><Link to='/post'><HiOutlinePencilAlt></HiOutlinePencilAlt></Link></li>
 
@@ -48,7 +48,7 @@ const Navbar = () => {
     }
 
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar shadow-xl">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -58,7 +58,7 @@ const Navbar = () => {
                         {nav}
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case font-bold text-xl">TALK</a>
+                <Link to='/home' className="btn btn-ghost normal-case font-bold text-xl font-serif">TALK</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
