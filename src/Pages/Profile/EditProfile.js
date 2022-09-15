@@ -11,7 +11,7 @@ const EditProfile = () => {
     const [profiles, setProfiles] = useState([]);
     const [reload, setReload] = useState(false);
     useState(()=>{
-        fetch(`http://localhost:5000/profile?email=${user?.email}`)
+        fetch(`https://sheltered-brushlands-10944.herokuapp.com/profile?email=${user?.email}`)
         .then(res=>res.json())
         .then(data=>setProfiles(data))
     },[reload])
@@ -38,7 +38,7 @@ const EditProfile = () => {
             school: school
         }
 
-        const url = `http://localhost:5000/profile/${email}`;
+        const url = `https://sheltered-brushlands-10944.herokuapp.com/profile/${email}`;
         fetch(url, {
             method: 'PUT', // or 'PUT'
             headers: {

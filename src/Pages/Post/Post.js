@@ -25,7 +25,7 @@ const Post = () => {
             email:user.email,
             date:date
         }
-        fetch(`http://localhost:5000/post`, {
+        fetch(`https://sheltered-brushlands-10944.herokuapp.com/post`, {
             method: 'POST', // or 'PUT'
             headers: {
                 'Content-Type': 'application/json',

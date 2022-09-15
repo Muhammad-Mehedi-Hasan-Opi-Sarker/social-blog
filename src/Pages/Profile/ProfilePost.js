@@ -13,7 +13,7 @@ const ProfilePost = () => {
     const [posts, setPosts] = useState([]);
     const [reload, setReload] = useState(false);
     useEffect(() => {
-        fetch(`http://localhost:5000/data?email=${user?.email}`)
+        fetch(`https://sheltered-brushlands-10944.herokuapp.com/data?email=${user?.email}`)
             .then(res => res.json()).then(data => setPosts(data))
     }, [reload])
 
@@ -26,7 +26,7 @@ const ProfilePost = () => {
     const handleDelete = (id) => {
         const proceed = window.confirm('Are you Sure');
         if (proceed) {
-            const url = `http://localhost:5000/post/${id}`;
+            const url = `https://sheltered-brushlands-10944.herokuapp.com/post/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

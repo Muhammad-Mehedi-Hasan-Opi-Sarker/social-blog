@@ -6,7 +6,7 @@ const Update = () => {
 
     const [data, setData] = useState({});
     useEffect(() => {
-        fetch(`http://localhost:5000/post/${id}`)
+        fetch(`https://sheltered-brushlands-10944.herokuapp.com/post/${id}`)
             .then(res => res.json()).then(data => setData(data));
     }, [])
 
@@ -15,7 +15,7 @@ const Update = () => {
         const title = e.target.title.value;
         const post = e.target.post.value;
         const data = { title, post };
-        const url = `http://localhost:5000/post/${id}`;
+        const url = `https://sheltered-brushlands-10944.herokuapp.com/post/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -39,9 +39,10 @@ const Update = () => {
                     {/* for title  */}
                     <textarea
                         className="textarea textarea-primary tit h-20 mb-8 placeholder:text-3xl
-    rounded-none"
+rounded-none"
                         placeholder='Write Title'
                         type="text" name='title'
+                        required
                     ></textarea><br />
 
                     {/* Details for  */}
@@ -50,6 +51,7 @@ const Update = () => {
     rounded-none"
                         placeholder='Tell Your Story.....'
                         type="text" name='post'
+                        required
                     ></textarea> <br />
                     <input className='btn rounded-full border-none' style={{ backgroundColor: '#1a8917' }} type="submit" value="Update" />
                 </form>

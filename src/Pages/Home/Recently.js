@@ -16,7 +16,7 @@ const Recently = () => {
     return (
         <div>
             {
-                recent.slice(2,7).map(r=><div className='ml-5 w-60 mb-5'>
+                recent.slice(2,7).map(r=><div className='mb-5'>
                 <div className="card w-60 bg-base-100 border-none rounded-none">
     
                     <div className="avatar offline">
@@ -28,7 +28,7 @@ const Recently = () => {
                     </div>
     
                     <div className="">
-                        <h2 onClick={() => seeMore(r._id)} className="font-bold mr-8">{r.title}</h2>
+                        <h2 onClick={() => seeMore(r._id)} className="font-bold mr-8">{r.title.slice(0,34)}</h2>
                     </div>
                 </div>
             </div>)

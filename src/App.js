@@ -11,6 +11,8 @@ import SeeMore from './Pages/Home/SeeMore';
 import Profile from './Pages/Profile/Profile';
 import EditProfile from './Pages/Profile/EditProfile';
 import Update from './Pages/Profile/Update';
+import NotFound from './Pages/Sheared/NotFound';
+import RequiredAuth from './Pages/RequiredAuth';
 
 
 function App() {
@@ -20,12 +22,21 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
-        <Route path='/post' element={<Post></Post>}></Route>
+        <Route path='/post' element={
+          <RequiredAuth>
+            <Post></Post>
+          </RequiredAuth>
+        }></Route>
         <Route path='/profile' element={<Profile></Profile>}></Route>
         <Route path='/seeMore/:id' element={<SeeMore></SeeMore>}></Route>
         <Route path='/update/:id' element={<Update></Update>}></Route>
-        <Route path='/edit' element={<EditProfile></EditProfile>}></Route>
+        <Route path='/edit' element={
+          <RequiredAuth>
+            <EditProfile></EditProfile>
+          </RequiredAuth>
+        }></Route>
         <Route path='/signin' element={<SignIn></SignIn>}></Route>
+        <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <ToastContainer></ToastContainer>
     </div>

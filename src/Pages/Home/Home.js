@@ -9,7 +9,7 @@ const Home = () => {
     const [recent, setRecent] = useState([]);
     const navigate = useNavigate();
     useEffect(() => {
-        fetch('http://localhost:5000/post')
+        fetch('https://sheltered-brushlands-10944.herokuapp.com/post')
             .then(res => res.json()).then(data => setRecent(data))
     }, [])
 
@@ -51,7 +51,7 @@ const Home = () => {
                                     </div>
 
                                     <div className="">
-                                        <h2 onClick={() => seeMore(r._id)} className="font-bold mr-8">{r.title}</h2>
+                                        <h2 onClick={() => seeMore(r._id)} className="font-bold mr-8">{r.title.slice(0,34)}</h2>
                                     </div>
                                 </div>
                             </div>)

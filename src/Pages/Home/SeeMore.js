@@ -8,7 +8,7 @@ const SeeMore = () => {
     const { id } = useParams();
     const [data, setData] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/post/${id}`)
+        fetch(`https://sheltered-brushlands-10944.herokuapp.com/post/${id}`)
             .then(res => res.json()).then(data => setData(data))
     }, [])
     return (
