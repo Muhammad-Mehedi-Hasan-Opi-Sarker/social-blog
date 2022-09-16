@@ -5,6 +5,7 @@ import { TiDelete } from 'react-icons/ti';
 import { FiEdit3 } from 'react-icons/fi';
 import auth from '../../firebase.init';
 import RequiredAuth from '../RequiredAuth';
+import { Link } from 'react-router-dom';
 
 const See = ({ data }) => {
     const [user, loading, error] = useAuthState(auth);
@@ -139,7 +140,7 @@ const See = ({ data }) => {
                         {/* delete  */}
                         <button onClick={()=>handleDelete(c._id)} className='ml-5 text-xl'><TiDelete></TiDelete></button>
                         {/* edit  */}
-                        <p className='ml-3'><FiEdit3></FiEdit3></p>
+                        <button  className='ml-3'><Link to={`/updateComment/${c._id}`}><FiEdit3></FiEdit3></Link></button>
                     </div>
 
                     <div className=''>

@@ -13,6 +13,7 @@ import EditProfile from './Pages/Profile/EditProfile';
 import Update from './Pages/Profile/Update';
 import NotFound from './Pages/Sheared/NotFound';
 import RequiredAuth from './Pages/RequiredAuth';
+import UpdateComment from './Pages/Home/UpdateComment';
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
         <Route path='/profile' element={<Profile></Profile>}></Route>
         <Route path='/seeMore/:id' element={<SeeMore></SeeMore>}></Route>
         <Route path='/update/:id' element={<Update></Update>}></Route>
+        <Route path='/updateComment/:id' element={<UpdateComment></UpdateComment>}></Route>
         <Route path='/edit' element={
           <RequiredAuth>
             <EditProfile></EditProfile>
