@@ -83,7 +83,7 @@ const Navbar = () => {
                             <li>
                                 <Link to='/profile' className="justify-between">Profile</Link>
                             </li>
-                            <li><a>Settings</a></li>
+                            {/* <li><a>Settings</a></li> */}
                             {errorElement}
                             <li>{user ?<a onClick={logout} >SignOut</a> :<a onClick={() => signInWithGoogle()}>SignIn</a>}</li>
                         </ul>

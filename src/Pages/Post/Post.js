@@ -41,12 +41,12 @@ const Post = () => {
             })
     }
     return (
-        <div className='mt-16 lg:px-24 px-4 mr-4'>
+        <div className='mt-16 lg:px-80 px-4 mr-4'>
 
             <form onSubmit={handlePost}>
                 {/* for title  */}
                 <textarea
-                    className="textarea textarea-primary tit h-20 mb-8 placeholder:text-3xl
+                    className="textarea textarea-primary w-full h-20 mb-8 placeholder:text-3xl
                 rounded-none"
                     placeholder='Write Title'
                     type="text" name='title'
@@ -54,7 +54,7 @@ const Post = () => {
 
                 {/* Details for  */}
                 <textarea
-                    className="textarea textarea-primary tit h-40 mb-8 placeholder:text-3xl
+                    className="textarea textarea-primary w-full h-40 mb-8 placeholder:text-3xl
                 rounded-none"
                     placeholder='Tell Your Story.....'
                     type="text" name='post'

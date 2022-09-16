@@ -31,7 +31,8 @@ const Home = () => {
                             onChange={(event) => {
                                 setSearchTerm(event.target.value);
                             }}
-                            className='input w-full max-w-xs border-cyan-800 mt-3 rounded-none border-none'
+                            className='input w-full max-w-xs mt-3 rounded-full border-none shadow-xl placeholder:text-black'
+                            style={{backgroundColor:'#D3D3D3'}}
                             type="text" name="" id=""
                             placeholder='search..'
                         />

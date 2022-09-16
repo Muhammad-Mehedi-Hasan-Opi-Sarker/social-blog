@@ -66,6 +66,21 @@ const See = ({ data }) => {
              .then((data) => {
                 console.log(data)
              }) */
+    }
+
+    const handleDelete = id => {
+        const proceed = window.confirm('Are you Sure');
+        if (proceed) {
+            const url = `http://localhost:5000/comment/${id}`;
+            fetch(url, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    setReload(!reload)
+                })
+        }
 
     }
 
@@ -121,13 +136,16 @@ const See = ({ data }) => {
                         </div>
                         <p className='ml-3'>{c.user} . <span>{c.date}</span></p>
 
+                        {/* delete  */}
+                        <button onClick={()=>handleDelete(c._id)} className='ml-5 text-xl'><TiDelete></TiDelete></button>
+                        {/* edit  */}
+                        <p className='ml-3'><FiEdit3></FiEdit3></p>
                     </div>
 
                     <div className=''>
                         <p>{c.comment}</p>
                         <div className='flex'>
-                            <p><TiDelete></TiDelete></p>
-                            <p><FiEdit3></FiEdit3></p>
+
                         </div>
                     </div>
                 </div>)
