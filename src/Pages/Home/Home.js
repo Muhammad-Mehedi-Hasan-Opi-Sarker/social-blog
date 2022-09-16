@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Content from './Content';
-import Recently from './Recently';
 
 const Home = () => {
     const [searchTerm, setSearchTerm] = useState("");

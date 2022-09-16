@@ -4,19 +4,13 @@ import { useParams } from 'react-router-dom';
 const UpdateComment = () => {
     const { id } = useParams();
 
-    const [data, setData] = useState({});
-    useEffect(() => {
-        fetch(`/${id}`)
-            .then(res => res.json()).then(data => setData(data));
-    }, [])
-
     // comment update 
     const handleUpdate =e=>{
         e.preventDefault();
         const comment = e.target.comment.value;
         const data= {comment};
 
-        const url = `http://localhost:5000/comment/${id}`;
+        const url = `https://sheltered-brushlands-10944.herokuapp.com/comment/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {

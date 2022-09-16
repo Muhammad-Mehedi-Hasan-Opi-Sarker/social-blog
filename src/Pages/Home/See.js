@@ -72,7 +72,7 @@ const See = ({ data }) => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you Sure');
         if (proceed) {
-            const url = `http://localhost:5000/comment/${id}`;
+            const url = `https://sheltered-brushlands-10944.herokuapp.com/comment/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
