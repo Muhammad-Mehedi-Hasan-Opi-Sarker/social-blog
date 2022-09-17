@@ -149,7 +149,7 @@ const See = ({ data }) => {
 
                         </div>
                     </div>
-                </div>)
+                </div>).reverse()
             }
         </div>
 
