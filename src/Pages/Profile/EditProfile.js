@@ -57,8 +57,8 @@ const EditProfile = () => {
 
     return (
         <div className='lg:px-20'>
-            <h1 className='font-bold text-2xl'>About you</h1>
-            <div className='grid lg:grid-cols-2'>
+            <h1 className='font-bold text-2xl font-serif'>About you</h1>
+            <div className='grid lg:grid-cols-2 font-serif'>
                 {/* data show  */}
                 {
                     profiles.map(profile => <div key={profile._id}>
