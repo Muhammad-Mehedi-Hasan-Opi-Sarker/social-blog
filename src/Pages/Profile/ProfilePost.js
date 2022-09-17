@@ -40,19 +40,19 @@ const ProfilePost = () => {
     return (
         <div className=''>
             <div className='border-b-2 lg:w-96'>
-                <h1 className='font-bold text-4xl mb-8'>{name}</h1>
-                <p className='mb-4'>All Posts</p>
+                <h1 className='font-bold text-4xl mb-8 font-serif'>{name}</h1>
+                <p className='mb-4 font-serif'>All Posts</p>
             </div>
 
             {/* posts data  */}
             <div>
                 {
                     posts.slice(0, 199).map(p => <div key={p._id} className="bg-primary mt-5 card grid justify-items-start border-b-2 rounded-none mb-5 p-2  w-full">
-                        <span>{p.date}</span>
+                        <span className='font-serif'>{p.date}</span>
 
                         <div className='grid justify-items-start'>
-                            <h1 onClick={() => seeMore(p._id)} className='font-bold text-2xl'>{p.title}</h1>
-                            <p className='mt-5 tracking-tight' >{p.post.slice(0, 199)} see more </p>
+                            <h1 onClick={() => seeMore(p._id)} className='font-bold text-2xl font-serif'>{p.title}</h1>
+                            <p className='mt-5 tracking-tight font-serif' >{p.post.slice(0, 199)} see more </p>
                             <div className='flex'>
                                 <span onClick={() => handleDelete(p._id)} className='mr-8 font-bold text-xl'><MdDeleteForever></MdDeleteForever></span>
                                 <span className=' font-bold text-xl'><Link to={`/update/${p._id}`}><AiOutlineEdit></AiOutlineEdit></Link></span>

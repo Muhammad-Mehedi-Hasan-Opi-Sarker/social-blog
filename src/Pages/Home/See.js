@@ -114,10 +114,10 @@ const See = ({ data }) => {
                         <div>
                             <label htmlFor=""></label> <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Comment</span>
+                                    <span className="label-text font-serif">Comment</span>
                                 </label>
 
-                                <textarea name='comment' required className="w-96 textarea textarea-bordered h-24 mb-5" placeholder="Write comment"></textarea>
+                                <textarea name='comment' required className="w-96 textarea textarea-bordered h-24 mb-5 font-serif" placeholder="Write comment"></textarea>
                                 <input className='btn w-32' type="submit" value="Submit" />
                             </div>
 
@@ -144,7 +144,7 @@ const See = ({ data }) => {
                     </div>
 
                     <div className=''>
-                        <p>{c.comment}</p>
+                        <p className='font-serif'>{c.comment}</p>
                         <div className='flex'>
 
                         </div>

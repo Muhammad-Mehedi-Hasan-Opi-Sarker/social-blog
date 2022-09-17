@@ -14,8 +14,8 @@ const ProfileDetails = () => {
                     <img src={user?.photoURL} />
                 </div>
             </div>
-            <h4 className='font-bold text-2xl ml-5'>{name}</h4>
-            <p className='text-green-500 mr-16'><Link to='/edit'>Edit Profile</Link></p>
+            <h4 className='font-bold text-2xl ml-5 font-serif'>{name}</h4>
+            <p className='text-green-500 mr-16 font-serif'><Link to='/edit'>Edit Profile</Link></p>
         </div>
     );
 };
