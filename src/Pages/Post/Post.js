@@ -34,10 +34,7 @@ const Post = () => {
         })
             .then((response) => response.json())
             .then((data) => {
-                if(data){
-                    
                     toast('Publish Your Post')
-                }
             })
     }
     return (

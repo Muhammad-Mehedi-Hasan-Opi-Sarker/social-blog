@@ -31,7 +31,7 @@ const Home = () => {
                                 setSearchTerm(event.target.value);
                             }}
                             className='input w-full max-w-xs mt-3 rounded-full border-none shadow-xl placeholder:text-black'
-                            style={{backgroundColor:'#D3D3D3'}}
+                            style={{ backgroundColor: '#D3D3D3' }}
                             type="text" name="" id=""
                             placeholder='search..'
                         />
@@ -39,8 +39,8 @@ const Home = () => {
 
                     <div>
                         {
-                            recent.slice(2, 7).map(r => <div className='ml-5 w-60 mb-5 bg-secondary'>
-                                <div className="card w-60 bg-slate-50 border-none rounded-none">
+                            recent.slice(2, 7).map(r => <div className='ml-5 lg:w-60 mb-5 bg-secondary'>
+                                <div className="card w-full bg-slate-50 border-none rounded-none">
 
                                     <div className="avatar offline">
                                         <div className="w-8 rounded-full mr-3">
@@ -51,7 +51,7 @@ const Home = () => {
                                     </div>
 
                                     <div className="">
-                                        <h2 onClick={() => seeMore(r._id)} className="font-bold mr-8 font-serif">{r.title.slice(0,34)}</h2>
+                                        <h2 onClick={() => seeMore(r._id)} className="font-bold mr-8 font-serif">{r.title.slice(0, 34)}</h2>
                                     </div>
                                 </div>
                             </div>)

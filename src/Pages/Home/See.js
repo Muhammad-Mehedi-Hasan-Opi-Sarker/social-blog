@@ -51,12 +51,12 @@ const See = ({ data }) => {
             })
     }
     // like for 
-    const handleLike = e => {
+   /*  const handleLike = e => {
         e.preventDefault();
         const count = e.target.count.value;
         const data = { count: count };
 
-        /*  fetch(`http://localhost:5000/like/${count}`, {
+         fetch(`http://localhost:5000/like/${count}`, {
              method: 'PUT',
              headers: {
                  'Content-Type': 'application/json',
@@ -66,8 +66,8 @@ const See = ({ data }) => {
              .then((response) => response.json())
              .then((data) => {
                 console.log(data)
-             }) */
-    }
+             })
+    } */
 
     const handleDelete = id => {
         const proceed = window.confirm('Are you Sure');
@@ -103,10 +103,10 @@ const See = ({ data }) => {
                     <p className='  text-lg font-serif'>{data?.post}</p>
                 </div>
                 {/* form for comment  */}
-                <form onSubmit={handleLike}>
+              {/*   <form onSubmit={handleLike}>
                     <button className='text-xl' onClick={like}><FaHandHoldingHeart></FaHandHoldingHeart></button>
                     <button disabled name='count' className='mt-3 lg:mr-5 mr-5 font-bold w-12' id="" value={counter} >{counter}</button>
-                </form>
+                </form> */}
 
                 <RequiredAuth>
                     <form onSubmit={handleComment}>
@@ -129,7 +129,7 @@ const See = ({ data }) => {
 
             {/* comment  */}
             {
-                comments.map(c => <div className="card bg-base-100 border-b-2 rounded-none mb-5 p-2 lg:w-3/5 w-96">
+                comments.map(c => <div className="card bg-base-100 border-b-2 rounded mb-5 p-2 lg:w-2/5 w-96">
                     <div className="avatar">
                         <div className="w-8 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                             <img src={c.photo} />
@@ -138,9 +138,9 @@ const See = ({ data }) => {
                         <p className='ml-3'>{c.user} . <span>{c.date}</span></p>
 
                         {/* delete  */}
-                        <button onClick={()=>handleDelete(c._id)} className='ml-5 text-xl'><TiDelete></TiDelete></button>
+                        {c.email == user.email?<button onClick={()=>handleDelete(c._id)} className='ml-5 text-xl'><TiDelete></TiDelete></button> : <p></p>}
                         {/* edit  */}
-                        <button  className='ml-3'><Link to={`/updateComment/${c._id}`}><FiEdit3></FiEdit3></Link></button>
+                        {c.email == user.email ? <button  className='ml-3'><Link to={`/updateComment/${c._id}`}><FiEdit3></FiEdit3></Link></button> : <p></p>}
                     </div>
 
                     <div className=''>
